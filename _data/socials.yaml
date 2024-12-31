@@ -1,41 +1,41 @@
 - name: email
-  username: mat.mangioni@gmail.com
-  link: mailto:mat.mangioni@gmail.com
+  username: tony.baiamonte9@gmail.com
+  link: mailto:tony.baiamonte9@gmail.com
   svg: mail-logo.svg
   type: contact
 - name: linkedin
-  username: Matteo Mangioni
-  link: https://www.linkedin.com/in/matteo-mangioni-18302224b/
+  username: Anthony Baiamonte
+  link: https://www.linkedin.com/in/tonybaia/
   svg: linkedin-logo.svg
   type: contact
 - name: discord
   username: mangio_m
-  link: discordapp.com/users/431064849531928577
+  link: discordapp.com/users/784732388118757387
   svg: discord-logo.svg
   type: contact
 - name: itch.io
-  username: matmangio
-  link: https://matmangio.itch.io
+  username: TonyBaia
+  link: https://tonybaia.itch.io/
   svg: itch-logo.svg
   type: follow
 - name: github
-  username: matmangio
-  link: https://github.com/matmangio
+  username: TonyBaia99
+  link: https://github.com/TonyBaia99
   svg: github-logo.svg
   type: follow
 - name: instagram
-  username: matmangio_games
-  link: https://www.instagram.com/matmangio_games/
+  username: Anthony Baiamonte
+  link: https://www.instagram.com/tony_baia99/
   svg: instagram-logo.svg
   type: follow
-- name: twitter
-  username: matmangio
-  link: https://twitter.com/matmangio
-  svg: twitter-logo.svg
+- name: X
+  username: Anthony Baiamonte
+  link: https://x.com/Tony_Baia
+  svg: X-logo.svg
   type: follow
 - name: reddit
   username: MangioM
-  link: https://www.reddit.com/user/MangioM/
+  link: https://www.reddit.com/user/TonyBaia/
   svg: reddit-logo.svg
   type: follow
 - name: rss feed
