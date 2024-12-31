@@ -1,0 +1,24 @@
+{% assign column_number = include.columns %}
+{% assign upper_index = column_number | minus: 1 %}
+{% for i in (0..upper_index) %}
+    <div class="pure-u-10-24 pure-u-sm-7-24 pure-u-md-5-24 pure-lg-3-24 pure-u-xl-3-24 pure-u-xxxl-1-24 foot-column center-text {%if include.hidden-sm %} hidden-sm {% elsif include.hidden-over-sm %} hidden-over-sm {% endif %}">
+        {% assign column_size = site.data.socials.size | divided_by: column_number %}
+        {% assign remainder = site.data.socials.size | modulo: column_number %}
+        {% if remainder > 0 %}
+            {% assign column_size = column_size | plus: 1 %}
+        {% endif %}
+        {% for j in (1..column_size) %}
+            {% assign index = i | times: column_size %}
+            {% assign index = index | plus: j %}
+            {% assign index = index | minus: 1 %}
+            {% if index < site.data.socials.size %}
+                <a href="{{ site.data.socials[index].link }}" class="social {% if j < column_size %} top {% endif %}">
+                    {% if site.data.socials[index].svg != null%}
+                        <img src="/assets/images/svg/{{ site.data.socials[index].svg }}" height="15" class="valign-middle" alt="{{ site.data.socials[index].name }} logo">
+                    {% endif %}
+                    {{ site.data.socials[index].name }}
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endfor %}

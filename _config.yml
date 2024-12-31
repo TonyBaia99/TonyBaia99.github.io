@@ -1,0 +1,117 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: TonyBaia
+description: >- # this means to ignore newlines until "baseurl:"
+  Anthony Baiamonte's personal site: game design and 
+  articles about videogames, boardgames
+  and all things games!
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://tonybaia99.it" # the base hostname & protocol for your site, e.g. http://example.com
+
+# SEO settings
+tagline: Gamedev & articles
+twitter:
+  username: Tony_Baia
+  card: summary
+logo: /assets/images/favicon.png
+social:
+  name: Anthony Baiamonte
+  links:
+    - https://www.linkedin.com/in/tonybaia/
+    - https://tonybaia.itch.io/
+    - https://github.com/TonyBaia99
+    - https://www.instagram.com/tony_baia99/
+    - https://x.com/Tony_Baia
+    - https://www.reddit.com/user/TonyBaia/
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jemoji
+
+# Settings for Github Pages
+lsi: false
+safe: true
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Site specifics
+collections:
+  games:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "my_post"
+      parent: "/articles.html"
+  - scope:
+      path: ""
+      type: "games"
+    values:
+      layout: "my_game"
+      parent: "/games.html"
+  - scope:
+      path: ""
+    values:
+      layout: "my_default"
+      image: /assets/images/favicon.png
+
+# Excerpt options
+excerpt_separator: <!--more-->
+
+# Feed options
+author: Anthony Baiamonte
+feed:
+  posts_limit: 20
+  collections:
+    - games
+  disable_in_development: true

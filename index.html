@@ -1,0 +1,30 @@
+---
+title: home
+---
+{% include /liquid/time.liquid %}
+<div class="pure-g">
+    <div class="pure-u-1">
+        <img src="/assets/images/favicon.png" width="25%" class="circular-border float" style="margin: 0px 16px 5px 0px;" alt="Matteo Mangioni's logo">
+        <h1><u>Hi there!</u> :wave:</h1>
+        <p style="margin-bottom: 0;">
+            I'm <b>Matteo Mangioni</b>, a {{ my_age }}-years-old aspiring game designer with an interest in writing, and this is my personal website!
+            Here you can find my toughts on various video games, board games and role playing games along with the games I develop, I hope you like it! ^_^ 
+        </p>
+    </div>
+</div>
+
+<h3> :page_facing_up: <u>Latest post</u></h3>
+{% if site.posts.size > 0 %}
+    {% assign posts = site.posts | sort: 'date' | reverse %}
+    {% include card.html collection=posts index=0 top=1 bottom=1 %}
+{% else %}
+    <p>No articles published yet!</p>
+{% endif %}
+
+<h3> :game_die: <u>Latest game</u></h3>
+{% if site.games.size > 0 %}
+    {% assign games = site.games | sort: 'date' | reverse %}
+    {% include card.html collection=games index=0 top=1 bottom=1 %}
+{% else %}
+    <p>No games published yet!</p>
+{% endif %}

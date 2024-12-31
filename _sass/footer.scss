@@ -1,0 +1,53 @@
+.foot-body {
+    margin-top: auto;
+    background-color: $nav-color;
+    color: $bg-color;
+    border-top: 4px solid $border-color;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+
+    .foot-column {
+        padding: 10px;
+
+        a.social {
+            display: block;
+            text-decoration: none;
+            color: $bg-color;
+            font-size: 0.8em;
+        }
+
+        a.social:hover {
+            color: $text-color;
+            font-weight: bold;
+
+            img {
+                filter: invert(98%) sepia(0%) saturate(2395%) hue-rotate(301deg) brightness(110%) contrast(70%);
+            }
+        }
+
+        a.social:active {
+            color: white;
+
+            img {
+                filter: invert(100%);
+            }
+        }
+
+        a.top {
+            margin-bottom: 10px;
+        }
+
+        a.foot-decoration {
+            color: $bg-color;
+            text-decoration: none;
+        }
+
+        a.foot-decoration:hover {
+            color: $text-color;
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+}

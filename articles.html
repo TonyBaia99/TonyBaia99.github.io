@@ -1,0 +1,23 @@
+---
+title: articles
+---
+<h1 class="center-text" style="margin-bottom: 6px;"><u>Articles</u></h1>
+
+{% if site.posts.size > 0 %}
+    <p class="center-text" style="margin-top: 0;">Reviews, impressions and devlogs, all in a single place!</p>
+
+    {% assign last_post_index = site.posts.size | minus: 1 %}
+    {% assign posts = site.posts | sort: 'date' | reverse %}
+    {% for i in (0..last_post_index) %}
+        {% assign is_top = 0 %}
+        {% if i == 0 %}
+            {% assign is_top = 1 %}
+        {% endif %}
+        {% if i == last_post_index %}
+            {% assign is_bottom = 1 %}
+        {% endif %}
+        {% include card.html collection=posts index=i top=is_top bottom=is_bottom %}
+    {% endfor %}
+{% else %}
+    <p class="center-text">No articles published yet!</p>
+{% endif %}

@@ -1,0 +1,43 @@
+{% assign post = include.collection[include.index] %}
+{% if post != null %}
+    {% assign tags_num = post.tags.size | minus: 1 %}
+    <div class="card {%if include.top == 1 %} top-card {% endif %} {%if include.bottom == 1 %} bottom-card {% endif %}">
+        <a href="{{ post.url }}">
+            {% if post.image != null %}
+                <img src="{{ post.image }}" class="cover" alt="{{ post.title }} cover image">
+            {% endif %}
+            <div class="card-content to-clamp">
+                <div class="space-between"> <!-- Title for big screens -->
+                    <h3 style="text-align: left;" class="hidden-sm">{{ post.title }}</h3>
+                    <p style="min-width: fit-content;" class="hidden-sm">
+                        <small>
+                            {{ post.date | date: "%Y/%m/%d" }}
+                        </small>
+                    </p>
+                </div>
+                <div> <!-- Alternative title for small screens -->
+                    <h4 style="text-align: left;" class="hidden-over-sm"><u>{{ post.title }}</u></h4>
+                    <p class="hidden-over-sm">
+                        <small>
+                            {{ post.date | date: "%Y/%m/%d" }}
+                        </small>
+                    </p>
+                </div>
+                <div class="hidden-sm">
+                    {%if post.tags.size > 0 %}
+                        {% for i in (0..tags_num) %}
+                            {% assign tag_name = post.tags[i] | remove: "," %}
+                            {% assign tag_data = site.data.tags | where: "name", tag_name | first %} 
+                            <div class="tag-card" {% if tag_data %} style="background-color: {{ tag_data.bgcolor }}; color: {{ tag_data.color }}" {% endif %}>
+                                {{ tag_name }}
+                            </div>
+                        {% endfor %} 
+                    {% endif %}
+                </div>
+                <div class="card-excerpt">
+                    {{ post.excerpt | strip_html }}
+                </div>
+            </div>
+        </a>
+    </div>
+{% endif %}

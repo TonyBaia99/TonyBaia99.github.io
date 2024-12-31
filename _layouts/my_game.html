@@ -1,0 +1,12 @@
+---
+layout: my_post
+---
+{{ content }}
+
+{% if page.embed-link != null and page.game-link != null %}
+    <div class="align-center">
+        <iframe frameborder="0" src="{{ page.embed-link }}" width="100%" height="167">
+            <a href="{{ page.game-link }}">{{ page.title }} by {{ page.game-author }}</a>
+        </iframe>
+    </div>
+{% endif %}

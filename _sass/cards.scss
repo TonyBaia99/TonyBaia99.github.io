@@ -1,0 +1,80 @@
+div.card {
+    --max-height: 135px;
+    --content-padding: 10px;
+    --excerpt-margin: 6px;
+    --excerpt-font-size: 0.96em;
+
+    @media (max-width: 671.5px) {
+        --max-height: 90px;
+        --excerpt-margin: 0px;
+        --excerpt-font-size: 0.8em;
+    }
+
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    height: calc(var(--max-height) + 2 * --content-padding);
+
+    a {
+        display: block;
+        padding: var(--content-padding);
+        width: calc(100% - 2 * --content-padding);
+        height: var(--max-height);
+        text-decoration: none;
+        color: $text-color;
+    }
+
+    img.cover {
+        float:left;
+        margin-right: 10px;
+        height: var(--max-height);
+    }
+
+    h3 {
+        margin: 0;
+    }
+
+    h4 {
+        margin: 0;
+    }
+    
+    p {
+        margin: 0;      
+    }
+
+    div.card-excerpt {
+        margin-top: var(--excerpt-margin);
+        font-size: var(--excerpt-font-size);
+        line-height: 1.18;
+    }
+
+    .card-content {
+        max-height: var(--max-height);
+    }
+}
+
+.tag-card {
+    display: inline-block;
+    padding: 1px 6px;
+    margin-right: 4px;
+    text-align: center;
+    border-radius: 6px;
+    font-size: small;
+}
+
+.tag-bg-color {
+    color: $bg-color;
+}
+
+div.card:hover {
+    background-color: rgba(255, 255, 255, 0.262);
+}
+
+div.card.top-card {
+    margin-top: 10px;
+    border-top: 2px solid $border-color;
+}
+
+div.card.bottom-card {
+    margin-bottom: 10px;
+    border-bottom: 2px solid $border-color;
+}

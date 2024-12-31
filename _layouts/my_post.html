@@ -1,0 +1,47 @@
+---
+layout: my_default
+---
+
+<div class="links space-between">
+    <a href="{{ page.parent }}" class="std-decoration no-underline">
+        {% assign parent_name = page.parent | remove: "/" | remove: ".html" %}
+        < <u>back to {{ parent_name }}</u>
+    </a>
+    <p>{{ page.date | date: "%Y/%m/%d" }}</p>
+</div>
+
+{% if page.banner != null %}
+    <div class="post-cover">
+        <img src="{{ page.banner }}" alt="{{ page.title }} banner image">
+    </div>
+{% endif %}
+
+<h1 class="post-title left-text">{{ page.title }}</h1>
+
+<p class="tags">
+    {%if page.tags.size > 0 %}
+        {% assign tags_num = page.tags.size | minus: 1 %}
+        {% for i in (0..tags_num) %}
+            {% assign tag_name = page.tags[i] | remove: "," %}
+            {% assign tag_data = site.data.tags | where: "name", tag_name | first %} 
+            <div class="tag-card" {% if tag_data %} style="background-color: {{ tag_data.bgcolor }}; color: {{ tag_data.color }}" {% endif %}>
+               {{ tag_name }}
+            </div>
+        {% endfor %} 
+    {% endif %}
+</p>
+
+<div class="post-content">
+    {{ content }}
+</div>
+
+<div class="links {% if page.previous != null and page.next != null %} space-between {% elsif page.next != null %} align-right {% endif %}">
+    {% if page.previous != null %}
+        <a href="{{ page.previous.url }}" class="std-decoration no-underline">< <u>{{ page.previous.title }}</u></a>
+    {% endif %}
+    {% if page.next != null %}
+        <a href="{{ page.next.url }}" class="std-decoration no-underline"><u>{{ page.next.title }}</u> ></a>
+    {% endif %}
+</div>
+
+<div id="gitalk-container"></div>

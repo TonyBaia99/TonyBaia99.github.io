@@ -1,0 +1,8 @@
+- name: matmangio
+  link: /
+- name: articles
+  link: /articles.html
+- name: games
+  link: /games.html
+- name: about
+  link: /about.html

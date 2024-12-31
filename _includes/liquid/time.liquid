@@ -1,0 +1,8 @@
+{% assign current_year = "now" | date: "%Y" %}
+{% assign current_month = "now" | date: "%m" %}
+{% assign current_day = "now" | date: "%d" %}
+
+{% assign my_age = current_year | minus: 2001 %}
+{% if current_month < "05" %}
+    {% assign my_age = my_age | minus: 1 %}
+{% endif %}

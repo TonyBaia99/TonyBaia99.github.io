@@ -1,0 +1,110 @@
+.nav-body {
+    background-color: $nav-color;
+    border-bottom: 4px solid $border-color;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    font-size: 1.1em;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+
+    .nav-item {
+        text-align: center;
+        
+        a {
+            display: block;
+            padding: 10px 0px;
+            text-decoration: none;
+            color: $bg-color;
+        }
+    
+        a.nav-selected {
+            text-decoration: underline;
+            text-decoration-thickness: 1.5px;
+            font-weight: bold;
+        }
+
+        a:active {
+            color: $text-color;
+        }
+    }
+    
+    .nav-item:hover {
+        background-color: rgba(255, 255, 255, 0.262);
+    }
+
+    .nav-img {
+        vertical-align: middle;
+    }
+
+    .nav-header {
+        text-align: left;
+
+        a {
+            padding: 10px 20px;
+        }
+
+        img:active {
+            filter: invert(98%) sepia(0%) saturate(2395%) hue-rotate(301deg) brightness(110%) contrast(70%);
+        }
+
+        img.nav-close-toggle {
+            display: none;
+        }
+    }
+
+    .nav-header:hover {
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    .nav-dropdown {
+        text-align: right;
+    }
+
+    .nav-button {
+        padding: 0px;
+        margin: 10px 20px 0px 0px;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        float: inline-end;
+    }
+
+    .nav-icon-bar {
+        display: block;
+        width: 25px;
+        height: 4px;
+        margin: 2px;
+        background-color: $bg-color;
+    }
+}
+
+#nav-toggle[aria-expanded='true'] {
+    margin-top: 18px;
+}
+
+#nav-toggle[aria-expanded='true'] .nav-icon-bar:is(:first-child, :last-child) {
+    position: absolute;
+    margin: 0;
+    width: 25px;
+}
+  
+#nav-toggle[aria-expanded='true'] .nav-icon-bar:first-child {
+    transform: rotate(45deg);
+}
+  
+#nav-toggle[aria-expanded='true'] .nav-icon-bar:nth-child(2) {
+    opacity: 0;
+}
+  
+#nav-toggle[aria-expanded='true'] .nav-icon-bar:last-child {
+    transform: rotate(-45deg);
+}
+
+#nav-toggle:is(:hover) .nav-icon-bar {
+    background-color: $text-color;
+}

@@ -1,0 +1,26 @@
+<div role="navigation" class="pure-g nav-body center">
+    {% for item in site.data.navigation %}
+        <div class="pure-u-1 pure-u-md-5-24 pure-u-xl-1-8 nav-item hidden-sm">
+            <a href="{{ item.link }}" class="{% if item.link == page.url or item.link == page.parent %} nav-selected {% endif %}">{{ item.name }}</a>
+        </div>
+    {% endfor %}
+    <div class="pure-u-1-4 nav-item nav-header hidden-over-sm">
+        <a href="{{ site.data.navigation[0].link }}" class="nav-selected">{{ site.data.navigation[0].name }}</a>
+    </div>
+    <div class="pure-u-3-4 nav-item nav-header nav-dropdown hidden-over-sm">
+        <button id="nav-toggle" type="button" aria-controls="nav-menu" aria-label="Toggle menu" aria-expanded="false" class="nav-button">
+            <span class="nav-icon-bar"></span>
+            <span class="nav-icon-bar"></span>
+            <span class="nav-icon-bar"></span>
+        </button>
+    </div>
+    <div class="pure-u-1 hidden" id="nav-menu">
+        {% for item in site.data.navigation %}
+            {% if item.link != site.data.navigation[0].link %}
+                <div class="pure-u-1 nav-item nav-header hidden-over-sm">
+                    <a href="{{ item.link }}">{{ item.name }}</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
